@@ -1,7 +1,8 @@
-document.getElementById("sipStart").addEventListener("click", function () {
-    console.log("click")
-    setTimeout(() => {
-        console.log("here")
-        window.location.href = 'http://www.google.com'
-    }, 3000)
-});
+document.getElementById("sipStart").addEventListener("click", sipStart);
+
+
+function sipStart() {
+    document.getElementById("sipLoad").classList.add("spinner-grow", "spinner-grow-sm");
+    setTimeout(sipStart, 5000);
+    window.location.href = 'http://www.google.com'
+};
