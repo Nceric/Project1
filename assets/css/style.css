@@ -2,6 +2,7 @@
 body {
     background: black
 }
+
 .container {
     position: relative;
     text-align: center;
@@ -16,13 +17,116 @@ body {
     color: white;
     box-shadow: 2px 2px 4px #000000;
 }
+
 /* Centered text */
 .centered {
     position: absolute;
-    font-size: 70px;
-    top: 50%;
+    font-size: 50px;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-  text-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:active {
+    background-color: ghostwhite;
+    transition: 0.5s;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 650px) {
+    .centered {
+        position: absolute;
+        font-size: 35px;
+        transform: translate(-50%, -400%);
+    }
+    .btn {
+        position: relative;
+        font-size: 25px;
+        padding: 6px 12px;
+        transform: translate(-50%, -350%);
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 650px) {
+    .centered {
+        position: absolute;
+        font-size: 45px;
+        transform: translate(-50%, -200%);
+    }
+    .btn {
+        position: relative;
+        transform: translate(-50%, -300%);
+    }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .centered {
+        position: absolute;
+        font-size: 55px;
+        transform: translate(-50%, -150%);
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+    }
+    .btn {
+        position: relative;
+        transform: translate(-50%, -300%);
+        font-size: 30px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .centered {
+        position: absolute;
+        font-size: 60px;
+        transform: translate(-50%, -50%);
+    }
+    .btn {
+        position: relative;
+        font-size: 30px;
+        transform: translate(-50%, -300%);
+    }
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .centered {
+        position: absolute;
+        font-size: 80px;
+        transform: translate(-50%, -50%)
+    }
+    .btn {
+        position: relative;
+        padding: 24px 48px;
+        font-size: 40px;
+        transform: translate(-50%, -400%);
+    }
 }
