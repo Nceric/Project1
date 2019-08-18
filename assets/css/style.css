@@ -29,6 +29,9 @@ body {
     text-shadow: 2px 2px 4px #000000;
 }
 
+.sipPic {
+    opacity: 0.5;
+}
 .btn {
     position: absolute;
     top: 50%;
@@ -42,6 +45,7 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    opacity: 0.75;
 }
 
 .btn:hover {
@@ -53,6 +57,7 @@ body {
 .btn:active {
     background-color: ghostwhite;
     transition: 0.5s;
+    opacity: 0.25;
 }
 
 
