@@ -1,5 +1,18 @@
 // @ts-check
 
+// Search cocktail by name
+// https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+// List all cocktails by first letter
+// https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a
+// Search ingredient by name
+// https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
+// Lookup full cocktail details by id
+// https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
+// Lookup ingredient by ID
+// https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=552
+
+
+
 // Grocery Products
 
 // Grocery product endpoints will almost always give you a product id {ID}. With that and the imageType {TYPE} you can build the complete image paths depending on your needs.
@@ -9,7 +22,8 @@
 // 90x90
 // 312x231
 // 636x393
-const apiKey = "9b8593c8d1ac4cc7967acf03f4722027"
+
+const apiKey = "apikey=9b8593c8d1ac4cc7967acf03f4722027"
 
 const ingredient = []
 
