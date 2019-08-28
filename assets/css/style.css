@@ -135,3 +135,46 @@ body {
         transform: translate(-50%, -400%);
     }
 }
+
+#videoPlayer {
+    margin-left: 475px;
+    margin-top: 8%;
+    border-width: 5px;
+
+}
+
+ .container2 {
+    background-color: darkred;
+    border-radius: 5px;
+    border-width: 5px;
+    width: 35%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 50px;
+
+    
+    
+    
+
+
+}
+
+#recipeItems {
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    margin: 5px;
+    line-height: 40px;
+    
+
+    
+
+
+}
+
+#drinkName {
+    text-align: center;
+    font-size: 36px;
+    color: darkgoldenrod;
+
+}

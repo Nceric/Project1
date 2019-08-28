@@ -14,11 +14,27 @@
 <body>
     <div class="container"></div>
     <img class="sipPic" src="assets/images/Sip.jpg" alt="Sip" style="width: 100%">
-    <div class="centered text-center">Placeholder</div>
-    <a href='index.html'><button onclick="myFunction()" class="btn"><span
-                id="myBtn" role="status" aria-hidden="true"></span>Start Over</button> </a>
-                    </div> <script src="assets/javascript/sip.js">
-                </script>
+    <div class="centered text-center">What are you drinking?</div>
+    <a href='index.html'><button onclick="myFunction()" class="btn"><span id="myBtn" role="status"
+                aria-hidden="true"></span>Start Over</button> </a>
+    </div>
+    <div class="container">
+        <!-- Rendered Buttons will get Dumped Here  -->
+        <div id="buttons-view"></div>
+
+        <form id="ingredient-form">
+            <label for="ingredient-input"></label>
+            <input type="text" id="ingredient-input"><br>
+
+            <!-- Button triggers new ingredient to be added -->
+            <input id="add-ingredient" type="submit" value="Start Sippin'">
+        </form>
+
+        <!-- Drinks will Get Dumped Here -->
+        <div id="ingredients-view"></div>
+
+        <script src="assets/javascript/sipsearch.js" type="text/javascript"></script>
+        <script src="assets/javascript/sip.js"></script>
 </body>
 
 </html>
