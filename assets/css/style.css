@@ -1,7 +1,8 @@
 /* Container holding the image and the text */
-body {
+/*body {
     background: black
-}
+}*/
+
 .container {
     position: relative;
     text-align: center;
@@ -16,13 +17,217 @@ body {
     color: white;
     box-shadow: 2px 2px 4px #000000;
 }
+
 /* Centered text */
 .centered {
     position: absolute;
-    font-size: 70px;
-    top: 50%;
+    font-size: 50px;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-  text-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px #000000;
 }
+
+.sipPic {
+    opacity: 0.5;
+}
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.75;
+}
+
+.btn:hover {
+    background-color: black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:active {
+    background-color: ghostwhite;
+    transition: 0.5s;
+    opacity: 0.25;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 650px) {
+    .centered {
+        position: absolute;
+        font-size: 35px;
+        transform: translate(-50%, -400%);
+    }
+    .btn {
+        position: relative;
+        font-size: 25px;
+        padding: 6px 12px;
+        transform: translate(-50%, -350%);
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 650px) {
+    .centered {
+        position: absolute;
+        font-size: 45px;
+        transform: translate(-50%, -200%);
+    }
+    .btn {
+        position: relative;
+        transform: translate(-50%, -300%);
+    }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .centered {
+        position: absolute;
+        font-size: 55px;
+        transform: translate(-50%, -150%);
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+    }
+    .btn {
+        position: relative;
+        transform: translate(-50%, -300%);
+        font-size: 30px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .centered {
+        position: absolute;
+        font-size: 60px;
+        transform: translate(-50%, -50%);
+    }
+    .btn {
+        position: relative;
+        font-size: 30px;
+        transform: translate(-50%, -300%);
+    }
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .centered {
+        position: absolute;
+        font-size: 80px;
+        transform: translate(-50%, -50%)
+    }
+    .btn {
+        position: relative;
+        padding: 24px 48px;
+        font-size: 40px;
+        transform: translate(-50%, -400%);
+    }
+
+}
+.Taste-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    background-color: rgb(85, 85, 85);
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    opacity: 0.75;
+    padding: 6px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 5px;
+}
+
+
+.Ingredients-container {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -350%);
+    background-color: rgb(85, 85, 85);
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    opacity: 0.75;
+    padding: 6px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 5px;
+}
+.h1{
+    text-align: center;
+    font-size: 35px;
+}
+.Intro-2{
+  text-align: center;
+  transform: translate(-50%, -300%);
+  top: 80%;
+  left: 50%;
+  font-size: 35px;
+  
+}
+}
+body{
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
