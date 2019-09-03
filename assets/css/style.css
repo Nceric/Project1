@@ -1,7 +1,7 @@
 /* Container holding the image and the text */
-/*body {
-    background: black
-}*/
+body {
+    background-color: black;
+}
 
 .container {
     position: relative;
@@ -22,7 +22,7 @@
 .centered {
     position: absolute;
     font-size: 50px;
-    top: 25%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -32,11 +32,12 @@
 .sipPic {
     opacity: 0.5;
 }
+
 .btn {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -300%);
+    transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: #555;
     color: white;
@@ -60,78 +61,73 @@
     opacity: 0.25;
 }
 
-
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 650px) {
     .centered {
-        position: absolute;
-        font-size: 35px;
-        transform: translate(-50%, -400%);
+        font-size: 30px;
+        transform: translate(-50%, -75%);
     }
+
     .btn {
-        position: relative;
         font-size: 25px;
         padding: 6px 12px;
-        transform: translate(-50%, -350%);
+        transform: translate(-50%, 75%);
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 650px) {
     .centered {
-        position: absolute;
-        font-size: 45px;
-        transform: translate(-50%, -200%);
-    }
-    .btn {
-        position: relative;
-        transform: translate(-50%, -300%);
+        font-size: 35px;
+        transform: translate(-50%, -75%);
     }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-    .centered {
-        position: absolute;
-        font-size: 55px;
-        transform: translate(-50%, -150%);
-        color: white;
-        text-shadow: 2px 2px 4px #000000;
-    }
     .btn {
-        position: relative;
-        transform: translate(-50%, -300%);
-        font-size: 30px;
+        transform: translate(-50%, 75%);
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+
+        .centered {
+            font-size: 40px;
+            transform: translate(-50%, -75%);
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .btn {
+            transform: translate(-50%, 75%);
+            font-size: 20px;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        .centered {
+            font-size: 50px;
+            transform: translate(-50%, -75%);
+        }
+
+        .btn {
+            font-size: 25px;
+            transform: translate(-50%, 75%);
+        }
+
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        .centered {
+            font-size: 60px;
+            transform: translate(-50%, -75%)
+        }
+
+        .btn {
+            padding: 24px 48px;
+            font-size: 30px;
+            transform: translate(-50%, 75%);
+        }
+
     }
 }
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .centered {
-        position: absolute;
-        font-size: 60px;
-        transform: translate(-50%, -50%);
-    }
-    .btn {
-        position: relative;
-        font-size: 30px;
-        transform: translate(-50%, -300%);
-    }
-    
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .centered {
-        position: absolute;
-        font-size: 80px;
-        transform: translate(-50%, -50%)
-    }
-    .btn {
-        position: relative;
-        padding: 24px 48px;
-        font-size: 40px;
-        transform: translate(-50%, -400%);
-    }
-}}
