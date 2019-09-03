@@ -75,3 +75,5 @@
 
  // Calling the renderButtons function to display the intial buttons
  renderButtons();
+
+ 
