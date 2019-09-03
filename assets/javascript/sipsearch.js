@@ -9,32 +9,28 @@
      fetch(queryURL).then(function (response) {
          return response.json()
      }).then(function (responseJson) {
-         console.log(responseJson);
-         //create a div to hold the drinks
-         const drinkDiv = document.createElement("div");
-         drinkDiv.classList.add('ingredient');
-
-         const name = responseJson.drinks;
-         // Creating an element to have the drinks name displayed
-         const pOne = document.createElement("p")
-         pOne.innerHTML = name;
-
-         // Display drink name
-         drinkDiv.append(pOne);
-
-         // Retrieving the URL for the image
-         const imgURL = responseJson.drinks.strDrinkThumb;
-
-         // Creating an element to hold the image
-         const image = document.createElement("img")
-         image.setAttribute("src", imgURL);
-
-         // Appending the image
-         drinkDiv.append(image);
-
-         // Putting the new drinks above the previous drinks
-         document.getElementById("ingredients-view").prepend(drinkDiv);
-
+         for (let i = 0; i < 3; i++) {
+             console.log(responseJson.drinks[i].strInstructions)
+             //create a div to hold the drinks
+             const drinkDiv = document.createElement("div");
+             drinkDiv.classList.add('ingredient');
+             // Retrieving drink names from API
+             const name = responseJson.drinks[i].strDrink;
+             // Creating an element to have the drinks name displayed
+             const pOne = document.createElement("p")
+             pOne.innerHTML = name;
+             // Display drink name
+             drinkDiv.append(pOne);
+             // Retrieving the URL for the image
+             const imgURL = responseJson.drinks[i].strDrinkThumb;
+             // Creating an element to hold the image
+             const image = document.createElement("img");
+             image.setAttribute("src", imgURL);
+             // Appending the image
+             drinkDiv.append(image);
+             // Putting the new drinks above the previous drinks
+             document.getElementById("ingredients-view").prepend(drinkDiv);
+         }
      });
  }
 
