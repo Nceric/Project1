@@ -1,7 +1,7 @@
 /* Container holding the image and the text */
-/*body {
-    background: black
-}*/
+body {
+    background-color: black;
+}
 
 .container {
     position: relative;
@@ -22,7 +22,7 @@
 .centered {
     position: absolute;
     font-size: 50px;
-    top: 25%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -32,11 +32,12 @@
 .sipPic {
     opacity: 0.5;
 }
+
 .btn {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -300%);
+    transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: #555;
     color: white;
@@ -60,174 +61,73 @@
     opacity: 0.25;
 }
 
-
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 650px) {
     .centered {
-        position: absolute;
-        font-size: 35px;
-        transform: translate(-50%, -400%);
+        font-size: 30px;
+        transform: translate(-50%, -75%);
     }
+
     .btn {
-        position: relative;
         font-size: 25px;
         padding: 6px 12px;
-        transform: translate(-50%, -350%);
+        transform: translate(-50%, 75%);
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 650px) {
     .centered {
-        position: absolute;
-        font-size: 45px;
-        transform: translate(-50%, -200%);
+        font-size: 35px;
+        transform: translate(-50%, -75%);
     }
+
     .btn {
-        position: relative;
-        transform: translate(-50%, -300%);
+        transform: translate(-50%, 75%);
     }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
 
-    .centered {
-        position: absolute;
-        font-size: 55px;
-        transform: translate(-50%, -150%);
-        color: white;
-        text-shadow: 2px 2px 4px #000000;
-    }
-    .btn {
-        position: relative;
-        transform: translate(-50%, -300%);
-        font-size: 30px;
-    }
-}
+        .centered {
+            font-size: 40px;
+            transform: translate(-50%, -75%);
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .centered {
-        position: absolute;
-        font-size: 60px;
-        transform: translate(-50%, -50%);
-    }
-    .btn {
-        position: relative;
-        font-size: 30px;
-        transform: translate(-50%, -300%);
-    }
-    
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .centered {
-        position: absolute;
-        font-size: 80px;
-        transform: translate(-50%, -50%)
-    }
-    .btn {
-        position: relative;
-        padding: 24px 48px;
-        font-size: 40px;
-        transform: translate(-50%, -400%);
+        .btn {
+            transform: translate(-50%, 75%);
+            font-size: 20px;
+        }
     }
 
-}
-.Taste-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -300%);
-    background-color: rgb(85, 85, 85);
-    color: white;
-    font-size: 48px;
-    cursor: pointer;
-    opacity: 0.75;
-    padding: 6px;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
-    border-radius: 5px;
-}
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        .centered {
+            font-size: 50px;
+            transform: translate(-50%, -75%);
+        }
 
+        .btn {
+            font-size: 25px;
+            transform: translate(-50%, 75%);
+        }
 
-.Ingredients-container {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -350%);
-    background-color: rgb(85, 85, 85);
-    color: white;
-    font-size: 48px;
-    cursor: pointer;
-    opacity: 0.75;
-    padding: 6px;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
-    border-radius: 5px;
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        .centered {
+            font-size: 60px;
+            transform: translate(-50%, -75%)
+        }
+
+        .btn {
+            padding: 24px 48px;
+            font-size: 30px;
+            transform: translate(-50%, 75%);
+        }
+
+    }
 }
-.h1{
-    text-align: center;
-    font-size: 35px;
-}
-.Intro-2{
-  text-align: center;
-  transform: translate(-50%, -300%);
-  top: 80%;
-  left: 50%;
-  font-size: 35px;
-  
-}
-}
-body{
-    background: #f2f2f2;
-    font-family: 'Open Sans', sans-serif;
-  }
-  
-  .search {
-    width: 100%;
-    position: relative;
-    display: flex;
-  }
-  
-  .searchTerm {
-    width: 100%;
-    border: 3px solid #00B4CC;
-    border-right: none;
-    padding: 5px;
-    height: 20px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #9DBFAF;
-  }
-  
-  .searchTerm:focus{
-    color: #00B4CC;
-  }
-  
-  .searchButton {
-    width: 40px;
-    height: 36px;
-    border: 1px solid #00B4CC;
-    background: #00B4CC;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  /*Resize the wrap to see the search bar change!*/
-  .wrap{
-    width: 30%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
