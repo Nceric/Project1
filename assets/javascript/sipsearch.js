@@ -1,71 +1,125 @@
- // Example queryURL for Cocktail API
- const ingredients = ["Vodka", "Gin", "Whiskey", "Rum", "Tequila", "Brandy"];
 
- function displayDrinkInfo() {
+const getIngredients = obj => {
 
-     const ingredient = this.getAttribute("data-name");
-     const queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient;
+    const re = 'strIngredient';
 
-     fetch(queryURL).then(function (response) {
-         return response.json()
-     }).then(function (responseJson) {
-         const responseDrinks = responseJson.drinks;
-         const drinks = _.dropRight(responseDrinks, responseDrinks.length - 3);
-         console.log(drinks);
-         _.forEach (drinks, function(drink){
-             console.log(drink.strInstructions)
-             //create a div to hold the drinks
-             const drinkDiv = document.createElement("div");
-             drinkDiv.classList.add('ingredient');
-             // Retrieving drink names from API
-             const name = drink.strDrink;
-             // Creating an element to have the drinks name displayed
-             const pOne = document.createElement("p")
-             pOne.innerHTML = name;
-             // Display drink name
-             drinkDiv.append(pOne);
-             // Retrieving the URL for the image
-             const imgURL = drink.strDrinkThumb;
-             // Creating an element to hold the image
-             const image = document.createElement("img");
-             image.setAttribute("src", imgURL);
-             // Appending the image
-             drinkDiv.append(image);
-             // Putting the new drinks above the previous drinks
-             document.getElementById("ingredients-view").prepend(drinkDiv);
-         });
-     });
- }
- function renderButtons() {
-     // Deleting the buttons prior to adding new ingredients
-     // (this is necessary otherwise you will have repeat buttons)
-     document.getElementById("buttons-view").innerHTML = "";
-     // Looping through the array of ingredients
-     _.forEach (ingredients, function(ingredient){
-         // Then dynamically generating buttons for each ingredient in the array
-         const a = document.createElement("button");
-         // Adding a class of ingredient to our button
-         a.classList.add("ingredient");
-         // Adding a data-attribute
-         a.setAttribute("data-name", ingredient);
-         // Providing the initial button text
-         a.innerHTML = ingredient;
-         // Adding the button to the buttons-view div
-         document.getElementById("buttons-view").append(a);
-         // Function for displaying the ingredient info
-         a.addEventListener("click", displayDrinkInfo);
-     });
- }
- // This function handles events where one button is clicked
- document.getElementById("add-ingredient").addEventListener("click", function (event) {
-     event.preventDefault();
-     // This line grabs the input from the textbox
-     var ingredient = document.getElementById("ingredient-input").value.trim();
-     // Adding the ingredient from the textbox to our array
-     ingredients.push(ingredient);
-     console.log(ingredients);
-     // Calling renderButtons which handles the processing of our ingredient array
-     renderButtons();
- });
- // Calling the renderButtons function to display the intial buttons
- renderButtons();
+    const keys = Object.keys(obj).filter(key => key.indexOf(re) > -1);
+
+    const filter = keys.map(key => obj[key]).filter(ingred => ingred !== '' && ingred !== " ");
+
+    const ingredientsList = document.createElement("UL");
+
+
+    for (let i = 0; i < filter.length; i++) {
+        const foodItem = filter[i]
+
+        const apiKey = "ebeBxEQ0lUv4b4YUNMdwXZyH6sPjKF8Fbg6xdwWp"
+        const url = "https://api.nal.usda.gov/ndb/search/?format=json&q=" + foodItem + "&max=1&api_key=" + apiKey;
+
+        fetch(url).then(response => {
+            return response.json()
+        }).then(responseJson => {
+            console.log(responseJson.list.item[0].ndbno)
+            const secondUrl = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=" + apiKey + "&nutrients=205&nutrients=204&nutrients=208&nutrients=269&ndbno=" + responseJson.list.item[0].ndbno;
+
+            fetch(secondUrl).then(response => {
+                return response.json()
+            }).then(responseJson => {
+                console.log(responseJson.report.foods[0].nutrients)
+                const foodItem = filter[i]
+
+                const drinkCalories = responseJson.report.foods[0].nutrients[0].value
+
+                console.log(drinkCalories)
+               
+                const filteredList = filter[i];
+
+                const filteredListItem = document.createElement("li");
+
+                filteredListItem.textContent = filteredList;
+
+                ingredientsList.append(filteredListItem,drinkCalories)
+
+
+                
+                console.log(foodItem)
+            })
+
+
+        });
+
+    }
+    return ingredientsList;
+
+}
+
+
+document.querySelectorAll("button").forEach(node => {
+
+    node.addEventListener("click", () => {
+
+        const drink = event.target.id;
+
+        const cockTailQueryUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink;
+
+        fetch(cockTailQueryUrl).then(response => {
+            return response.json()
+        }).then(responseJson => {
+
+            const results = responseJson;
+
+            document.getElementById("drink-names").innerHTML = '';
+
+            let wrapper;
+
+            for (let i = 0; i < 3; i++) {
+
+
+
+                wrapper = document.createElement('div');
+                wrapper.classList.add('drink-wrapper');
+
+                const cockTailName = results.drinks[i].strDrink;
+                const recipeInstructions = results.drinks[i].strInstructions;
+                const imgURL = responseJson.drinks[i].strDrinkThumb;
+
+
+
+
+                const nameRecipeWrapper = document.createElement('div');
+                nameRecipeWrapper.classList.add('name-recipe-wrapper');
+
+                const cockTailDiv = document.createElement("p");
+                cockTailDiv.setAttribute("id", "name");
+                cockTailDiv.innerHTML = cockTailName;
+
+                const imageDiv = document.createElement("img");
+                imageDiv.setAttribute("src", imgURL);
+                imageDiv.innerHTML = imgURL;
+
+                const recipeDiv = document.createElement("p");
+                recipeDiv.setAttribute("id", "instructions");
+                recipeDiv.innerHTML = recipeInstructions;
+
+                const ingredientsDiv = document.createElement("p");
+                ingredientsDiv.setAttribute("id", "ingredients-list");
+
+                const ingredients = getIngredients(results.drinks[i]);
+
+
+
+                const ingredientsList = document.createElement("UL");
+                ingredientsList.innerHTML = ingredients;
+
+
+
+                ingredientsDiv.append(ingredients);
+                nameRecipeWrapper.append(cockTailDiv, ingredientsDiv);
+                wrapper.append(nameRecipeWrapper, recipeDiv, imageDiv);
+
+                document.getElementById("drink-names").prepend(wrapper);
+
+            }
+        });
+    });
+});

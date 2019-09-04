@@ -1,43 +1,19 @@
-/* Container holding the image and the text */
 body {
-    background-color: black;
-}
-
-.container {
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-/* Bottom left text */
-.bottom-left {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-    color: white;
-    box-shadow: 2px 2px 4px #000000;
-}
-
-/* Centered text */
-.centered {
-    position: absolute;
-    font-size: 50px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    font-family: sans-serif;
+    font-size: 25px;
+    background-image: url("../images/Sip.jpg");
+    background-size: 100%;
+    color: azure;
     text-shadow: 2px 2px 4px #000000;
 }
 
-.sipPic {
-    opacity: 0.5;
-}
+
 
 .btn {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -300%);
     -ms-transform: translate(-50%, -50%);
     background-color: #555;
     color: white;
@@ -49,85 +25,73 @@ body {
     opacity: 0.75;
 }
 
-.btn:hover {
-    background-color: black;
-    cursor: pointer;
-    transition: 0.5s;
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
-.btn:active {
-    background-color: ghostwhite;
-    transition: 0.5s;
-    opacity: 0.25;
+#welcome {
+    text-align: center;
+    font-size: 30px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 650px) {
-    .centered {
-        font-size: 30px;
-        transform: translate(-50%, -75%);
-    }
-
-    .btn {
-        font-size: 25px;
-        padding: 6px 12px;
-        transform: translate(-50%, 75%);
-    }
+#start-button-container {
+    text-align: center;
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 650px) {
-    .centered {
-        font-size: 35px;
-        transform: translate(-50%, -75%);
-    }
+#first-question {
+    text-align: center;
+}
 
-    .btn {
-        transform: translate(-50%, 75%);
-    }
+#buttons {
+    text-align: center;
+}
 
-    /* Medium devices (landscape tablets, 768px and up) */
-    @media only screen and (min-width: 768px) {
+button {
+    background-color: beige;
+    text-align: center;
+    opacity: .7;
+    font-size: 20px;
+}
 
-        .centered {
-            font-size: 40px;
-            transform: translate(-50%, -75%);
-            color: white;
-            text-shadow: 2px 2px 4px #000000;
-        }
+#instructions {
+    text-align: center;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+}
 
-        .btn {
-            transform: translate(-50%, 75%);
-            font-size: 20px;
-        }
-    }
+li {
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
 
-    /* Large devices (laptops/desktops, 992px and up) */
-    @media only screen and (min-width: 992px) {
-        .centered {
-            font-size: 50px;
-            transform: translate(-50%, -75%);
-        }
+.drink-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid white;
+    padding: 15px;
+    margin: 20px;
+    background-size: 100%;
+}
 
-        .btn {
-            font-size: 25px;
-            transform: translate(-50%, 75%);
-        }
+.name-recipe-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-    }
-
-    /* Extra large devices (large laptops and desktops, 1200px and up) */
-    @media only screen and (min-width: 1200px) {
-        .centered {
-            font-size: 60px;
-            transform: translate(-50%, -75%)
-        }
-
-        .btn {
-            padding: 24px 48px;
-            font-size: 30px;
-            transform: translate(-50%, 75%);
-        }
-
-    }
+img {
+    width: 25%;
+    align-content: center;
+}
+#welcome{
+    font-size: 55px;
+    
 }
