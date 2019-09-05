@@ -7,20 +7,23 @@
      const queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient;
 
      fetch(queryURL).then(function (response) {
-         return response.json()
+         return response.json();
      }).then(function (responseJson) {
+
          const responseDrinks = responseJson.drinks;
          const drinks = _.dropRight(responseDrinks, responseDrinks.length - 3);
          console.log(drinks);
+
          _.forEach(drinks, function (drink) {
-             console.log(drink.strInstructions)
+
+             console.log(drink.strInstructions);
              //create a div to hold the drinks
              const drinkDiv = document.createElement("div");
              drinkDiv.classList.add('ingredient');
              // Retrieving drink names from API
              const name = drink.strDrink;
              // Creating an element to have the drinks name displayed
-             const pOne = document.createElement("p")
+             const pOne = document.createElement("p");
              pOne.innerHTML = name;
              // Display drink name
              drinkDiv.append(pOne);
@@ -33,15 +36,16 @@
              drinkDiv.append(image);
              // Putting the new drinks above the previous drinks
              document.getElementById("ingredients-view").prepend(drinkDiv);
+
          });
      });
  }
 
  function renderButtons() {
+
      // Deleting the buttons prior to adding new ingredients
      // (this is necessary otherwise you will have repeat buttons)
      document.getElementById("buttons-view").innerHTML = "";
-
      // Looping through the array of ingredients
      _.forEach(ingredients, function (ingredient) {
 
@@ -55,23 +59,20 @@
          a.innerHTML = ingredient;
          // Adding the button to the buttons-view div
          document.getElementById("buttons-view").append(a);
-
          // Function for displaying the ingredient info
          a.addEventListener("click", displayDrinkInfo);
+
      });
  }
-
  // This function handles events where one button is clicked
  document.getElementById("add-ingredient").addEventListener("click", function (event) {
-     event.preventDefault();
 
+     event.preventDefault();
      // This line grabs the input from the textbox
      var ingredient = document.getElementById("ingredient-input").value.trim();
-
      // Adding the ingredient from the textbox to our array
      ingredients.push(ingredient);
      console.log(ingredients);
-
      // Calling renderButtons which handles the processing of our ingredient array
      renderButtons();
  });
